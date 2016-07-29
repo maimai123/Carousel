@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>轮播图插件</title>
+    <style media="screen">
+      /*CSS reset*/
+      body{line-height:1.4;color:#333;font-family:arial;font-size: 12px;background:white;overflow: hidden;}
+      input,textarea,select{font-size:12px;font-size:100%;font-family:arial;font-family:inherit;}
+      body,h1,h2,h3,h4,h5,h6,p,ul,ol,form{margin:0;}
+      h4,h5,h6{font-size:1em;}
+      ul,ol{padding-left:0;list-style-type:none;}
+      a img{border:0;}
+      img{border:0;}
+      ul{list-style: none;}
+      .banner{margin:20px auto;overflow: hidden;position: relative;}
+      .banner>.warp{position: absolute;}.banner>.warp::after{clear: both;content: '';}
+      .banner ul{margin:0 auto;}
+      .banner ul li{float: left;}
+      .docBox{height: 30px;overflow: hidden;text-align: center;height: 30px;z-index: 999;position:absolute;bottom:10px;left:85%;}
+      .docBox li{width:10px;height:10px;background:#aaa;float:left;margin:0px 3px;border-radius:50%;cursor: pointer;z-index: 1;border:2px solid transparent;}
+      .docBox li.active{background: red;z-index: 9;}
+    </style>
+  </head>
+  <body>
+    <div class="banner">
+      <div class="warp">
+        <ul class="wrapUl">
+          <li><a href="javascript:;"><img src="http://www.jq22.com/demo/unslider-150203225543/02.jpg" alt=""></a></li>
+          <li><a href="javascript:;"><img src="http://www.jq22.com/demo/unslider-150203225543/03.jpg" alt=""></a></li>
+          <li><a href="javascript:;"><img src="http://www.jq22.com/demo/unslider-150203225543/05.jpg" alt=""></a></li>
+          <li><a href="javascript:;"><img src="http://www.jq22.com/demo/unslider-150203225543/03.jpg" alt=""></a></li>
+        </ul>
+      </div>
+    </div>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.lazyload.js"></script>
+    <script type="text/javascript" src="Carousel.js"></script>
+    <script type="text/javascript">
+    $(function(){
+      $("img").lazyload();
+      $(".banner").Carousel({
+        'width' : "1200",  //设置容器宽度(暂不支持自适应)
+        'height' : "500", //设置容器高度
+        'effect' : "move",  //值为fade为淡入淡出效果 move则为左右移动
+        'speed' : "1000",  //设置左右移动速度
+        'delay' : "200"    //设置淡入淡出速度
+      });
+    })
+    </script>
+  </body>
+</html>
